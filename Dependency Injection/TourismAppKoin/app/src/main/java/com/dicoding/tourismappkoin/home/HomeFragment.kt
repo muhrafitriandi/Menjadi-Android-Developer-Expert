@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.tourismappkoin.R
 import com.dicoding.tourismappkoin.core.data.Resource
 import com.dicoding.tourismappkoin.core.ui.TourismAdapter
-import com.dicoding.tourismappkoin.core.ui.ViewModelFactory
 import com.dicoding.tourismappkoin.databinding.FragmentHomeBinding
 import com.dicoding.tourismappkoin.detail.DetailTourismActivity
 
