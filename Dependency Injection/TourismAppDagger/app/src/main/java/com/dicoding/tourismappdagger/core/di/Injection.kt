@@ -7,7 +7,6 @@ import com.dicoding.tourismappdagger.core.data.source.local.room.TourismDatabase
 
 import com.dicoding.tourismappdagger.core.data.TourismRepository
 import com.dicoding.tourismappdagger.core.data.source.remote.RemoteDataSource
-import com.dicoding.tourismappdagger.core.data.source.remote.network.ApiConfig
 import com.dicoding.tourismappdagger.core.domain.repository.ITourismRepository
 import com.dicoding.tourismappdagger.core.domain.usecase.TourismInteractor
 import com.dicoding.tourismappdagger.core.domain.usecase.TourismUseCase
