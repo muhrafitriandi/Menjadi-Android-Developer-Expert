@@ -1,32 +1,17 @@
 package com.dicoding.tourismappdagger.core.ui
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.tourismappdagger.core.di.Injection
 import com.dicoding.tourismappdagger.core.domain.usecase.TourismUseCase
 import com.dicoding.tourismappdagger.detail.DetailTourismViewModel
+import com.dicoding.tourismappdagger.di.AppScope
 import com.dicoding.tourismappdagger.favorite.FavoriteViewModel
 import com.dicoding.tourismappdagger.home.HomeViewModel
+import javax.inject.Inject
 
-class ViewModelFactory private constructor(private val tourismUseCase: TourismUseCase) :
+@AppScope
+class ViewModelFactory @Inject constructor(private val tourismUseCase: TourismUseCase) :
     ViewModelProvider.NewInstanceFactory() {
-
-    companion object {
-        @Volatile
-        private var instance: ViewModelFactory? = null
-
-        fun getInstance(context: Context): ViewModelFactory =
-            instance
-                ?: synchronized(this) {
-                instance
-                    ?: ViewModelFactory(
-                        Injection.provideTourismUseCase(
-                            context
-                        )
-                    )
-            }
-    }
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
