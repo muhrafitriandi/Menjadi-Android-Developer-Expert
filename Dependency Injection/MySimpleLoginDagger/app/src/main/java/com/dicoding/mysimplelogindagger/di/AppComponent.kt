@@ -5,7 +5,6 @@ import com.dicoding.mysimplelogindagger.HomeActivity
 import com.dicoding.mysimplelogindagger.MainActivity
 import dagger.BindsInstance
 import dagger.Component
-import dagger.Module
 import javax.inject.Singleton
 
 @Singleton
