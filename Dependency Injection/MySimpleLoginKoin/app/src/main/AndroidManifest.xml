@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dicoding.mysimplelogin">
+    package="com.dicoding.mysimpleloginkoin">
 
     <application
-        android:name=".MyApplication"
+        android:name="com.dicoding.mysimpleloginkoin.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySimpleLogin"
         tools:targetApi="31">
-        <activity android:name="com.dicoding.mysimplelogin.HomeActivity" />
+        <activity android:name="com.dicoding.mysimpleloginkoin.HomeActivity" />
         <activity
-            android:name="com.dicoding.mysimplelogin.MainActivity"
+            android:name="com.dicoding.mysimpleloginkoin.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

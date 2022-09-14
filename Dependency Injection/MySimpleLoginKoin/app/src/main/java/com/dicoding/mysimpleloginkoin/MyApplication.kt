@@ -1,4 +1,4 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.mysimpleloginkoin
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

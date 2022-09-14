@@ -1,15 +1,15 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.mysimpleloginkoin
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dicoding.mysimplelogin.databinding.ActivityMainBinding
+import com.dicoding.mysimpleloginkoin.databinding.ActivityMainBinding
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    val userRepository: UserRepository by inject()
+    private lateinit var binding: ActivityMainBinding
+    private val userRepository: UserRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

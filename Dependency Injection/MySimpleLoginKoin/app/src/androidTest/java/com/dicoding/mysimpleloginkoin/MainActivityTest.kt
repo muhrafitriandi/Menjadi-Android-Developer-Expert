@@ -1,4 +1,4 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.mysimpleloginkoin
 
 import org.junit.Assert.assertEquals
 import org.junit.After

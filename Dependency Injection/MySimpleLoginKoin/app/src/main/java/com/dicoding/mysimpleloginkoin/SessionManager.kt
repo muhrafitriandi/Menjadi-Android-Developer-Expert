@@ -1,4 +1,4 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.mysimpleloginkoin
 
 import android.content.Context
 import android.content.SharedPreferences

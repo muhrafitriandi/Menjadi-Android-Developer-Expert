@@ -1,15 +1,15 @@
-package com.dicoding.mysimplelogin
+package com.dicoding.mysimpleloginkoin
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.mysimplelogin.databinding.ActivityHomeBinding
+import com.dicoding.mysimpleloginkoin.databinding.ActivityHomeBinding
 import org.koin.android.ext.android.inject
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityHomeBinding
-    val userRepository: UserRepository by inject()
+    private lateinit var binding: ActivityHomeBinding
+    private val userRepository: UserRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
 //        val sesi = SessionManager(this)
 //        userRepository = UserRepository.getInstance(sesi)
 
-        binding.tvWelcome.text = "Welcome ${userRepository.getUser()}"
+        binding.tvWelcome.text = getString(R.string.welcome_message, userRepository.getUser())
 
         binding.btnLogout.setOnClickListener {
             userRepository.logoutUser()
