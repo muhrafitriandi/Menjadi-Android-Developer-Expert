@@ -40,9 +40,6 @@ class FavoriteFragment : Fragment() {
                 startActivity(intent)
             }
 
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            favoriteViewModel = ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
-
             favoriteViewModel.favoriteTourism.observe(viewLifecycleOwner) { dataTourism ->
                 tourismAdapter.setData(dataTourism)
                 binding.viewEmpty.root.visibility =
