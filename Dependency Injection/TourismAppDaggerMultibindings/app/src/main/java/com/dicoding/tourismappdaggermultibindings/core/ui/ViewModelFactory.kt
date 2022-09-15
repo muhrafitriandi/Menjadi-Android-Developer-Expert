@@ -2,11 +2,7 @@ package com.dicoding.tourismappdaggermultibindings.core.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.tourismappdaggermultibindings.core.domain.usecase.TourismUseCase
-import com.dicoding.tourismappdaggermultibindings.detail.DetailTourismViewModel
 import com.dicoding.tourismappdaggermultibindings.di.AppScope
-import com.dicoding.tourismappdaggermultibindings.favorite.FavoriteViewModel
-import com.dicoding.tourismappdaggermultibindings.home.HomeViewModel
 import javax.inject.Inject
 import javax.inject.Provider
 
