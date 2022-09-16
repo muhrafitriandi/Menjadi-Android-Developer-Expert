@@ -1,0 +1,3 @@
+rootProject.name='TourismAppModularization'
+include ':app'
+include ':core'
