@@ -2,6 +2,7 @@ package com.dicoding.mysimplelogindynamicfeature
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.core.SessionManager
 import com.dicoding.core.UserRepository
@@ -26,6 +27,18 @@ class HomeActivity : AppCompatActivity() {
             userRepository.logoutUser()
             moveToMainActivity()
         }
+
+        binding.fab.setOnClickListener {
+            try {
+                moveToChatActivity()
+            } catch (e: Exception){
+                Toast.makeText(this, "Module not found", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun moveToChatActivity() {
+        startActivity(Intent(this, Class.forName("com.dicoding.mysimplelogin.chat.ChatActivity")))
     }
 
     private fun moveToMainActivity() {
