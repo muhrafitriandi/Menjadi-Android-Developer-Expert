@@ -1,3 +1,4 @@
 rootProject.name='TourismAppDynamicFeature'
 include ':app'
 include ':core'
+include ':maps'
