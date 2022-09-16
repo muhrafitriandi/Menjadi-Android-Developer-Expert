@@ -1,0 +1,3 @@
+rootProject.name='MySimpleLoginDynamicFeature'
+include ':app'
+include ':core'
