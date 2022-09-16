@@ -1,2 +1,3 @@
 rootProject.name='MySimpleLoginModularization'
 include ':app'
+include ':core'

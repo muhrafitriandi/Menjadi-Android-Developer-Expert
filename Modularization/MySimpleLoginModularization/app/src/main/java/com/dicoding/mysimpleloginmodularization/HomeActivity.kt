@@ -3,12 +3,14 @@ package com.dicoding.mysimpleloginmodularization
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dicoding.core.SessionManager
+import com.dicoding.core.UserRepository
 import com.dicoding.mysimpleloginmodularization.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityHomeBinding
-    lateinit var userRepository: UserRepository
+    private lateinit var binding: ActivityHomeBinding
+    private lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
         val sesi = SessionManager(this)
         userRepository = UserRepository.getInstance(sesi)
 
-        binding.tvWelcome.text = "Welcome ${userRepository.getUser()}"
+        binding.tvWelcome.text = getString(R.string.welcome_message, userRepository.getUser())
 
         binding.btnLogout.setOnClickListener {
             userRepository.logoutUser()

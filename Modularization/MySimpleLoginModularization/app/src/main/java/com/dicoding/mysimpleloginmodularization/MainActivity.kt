@@ -3,12 +3,14 @@ package com.dicoding.mysimpleloginmodularization
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.core.SessionManager
+import com.dicoding.core.UserRepository
 import com.dicoding.mysimpleloginmodularization.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var userRepository: UserRepository
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
