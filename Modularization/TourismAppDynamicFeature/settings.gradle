@@ -1,0 +1,3 @@
+rootProject.name='TourismAppDynamicFeature'
+include ':app'
+include ':core'
