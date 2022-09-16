@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.dynamic-feature'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -10,10 +10,7 @@ android {
 
     defaultConfig {
         minSdk 21
-        targetSdk 33
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -26,19 +23,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    namespace 'com.yandey.core'
+    namespace 'com.yandey.favorite'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":app")
+    implementation project(":core")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
