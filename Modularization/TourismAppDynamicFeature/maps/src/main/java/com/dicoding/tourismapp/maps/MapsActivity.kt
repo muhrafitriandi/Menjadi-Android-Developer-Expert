@@ -6,6 +6,7 @@ import android.view.View
 import com.dicoding.tourismapp.core.data.Resource
 import com.dicoding.tourismapp.maps.databinding.ActivityMapsBinding
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 class MapsActivity : AppCompatActivity() {
 
@@ -16,6 +17,8 @@ class MapsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        loadKoinModules(mapsModule)
 
         supportActionBar?.title = "Tourism Map"
         getTourismData()
