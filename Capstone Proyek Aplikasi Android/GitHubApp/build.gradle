@@ -13,7 +13,6 @@ task clean(type: Delete) {
 ext {
     // Android
     kotlin_version = "1.7.10"
-    android_version = "7.2.1"
     core_ktx_version = "1.9.0"
     appcompat_version = "1.5.1"
     material_version = "1.6.1"
@@ -24,4 +23,10 @@ ext {
 
     // SplashScreenAPI
     splash_version = "1.0.0"
+
+    // SmoothBottomBar
+    smooth_bottom_bar_version = "1.7.9"
+
+    // NavigationArchitectureComponent
+    navigation_ktx_version = "2.5.2"
 }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">GitHubApp</string>
     <string name="title_favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
 </resources>
