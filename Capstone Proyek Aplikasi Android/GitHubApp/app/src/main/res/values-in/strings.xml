@@ -1,25 +1,25 @@
 <resources>
     <string name="app_name">GitHubApp</string>
-    <string name="title_favorite">Favorite</string>
+    <string name="title_favorite">Favorit</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="home">Home</string>
-    <string name="favorite">Favorite</string>
-    <string name="settings">Settings</string>
+    <string name="home">Beranda</string>
+    <string name="favorite">Favorit</string>
+    <string name="settings">Pengaturan</string>
 
-    <string name="text_language">Language</string>
-    <string name="text_change_language">Change Language</string>
-    <string name="text_common">Common</string>
-    <string name="text_display">Display</string>
+    <string name="text_language">Bahasa</string>
+    <string name="text_change_language">Ubah Bahasa</string>
+    <string name="text_common">Umum</string>
+    <string name="text_display">Tampilan</string>
 
     <string name="pref_dark_auto" translatable="false">auto</string>
     <string name="pref_dark_on" translatable="false">on</string>
     <string name="pref_dark_off" translatable="false">off</string>
     <string name="pref_key_dark" translatable="false">key_dark_mode</string>
-    <string name="pref_dark_title">Theme</string>
+    <string name="pref_dark_title">Tema</string>
 
-    <string name="dark_mode_auto">Automatic</string>
-    <string name="dark_mode_on">Dark Mode</string>
-    <string name="dark_mode_off">Light Mode</string>
+    <string name="dark_mode_auto">Otomatis</string>
+    <string name="dark_mode_on">Mode Gelap</string>
+    <string name="dark_mode_off">Mode Terang</string>
 
     <string-array name="dark_mode">
         <item>@string/dark_mode_auto</item>

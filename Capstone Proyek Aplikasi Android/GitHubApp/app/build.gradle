@@ -48,4 +48,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     // SplashScreenAPI
     implementation "androidx.core:core-splashscreen:$splash_version"
+    implementation "androidx.preference:preference-ktx:$preference_ktx_version"
 }

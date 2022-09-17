@@ -1,32 +1,34 @@
 package com.yandey.githubapp.ui.settings
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.yandey.githubapp.databinding.FragmentSettingsBinding
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.preference.ListPreference
+import androidx.preference.PreferenceFragmentCompat
+import com.yandey.githubapp.R
+import com.yandey.githubapp.utils.DarkMode
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : PreferenceFragmentCompat() {
 
-    private var _binding: FragmentSettingsBinding? = null
-    private val binding get() = _binding
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        return binding?.root
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.root_preferences, rootKey)
+        val themePreference = findPreference<ListPreference>(getString(R.string.pref_key_dark))
+        themePreference?.setOnPreferenceChangeListener { _, newValue ->
+            newValue?.let {
+                val theme =
+                    when ((it as String)) {
+                        getString(R.string.pref_dark_on) -> DarkMode.ON
+                        getString(R.string.pref_dark_off) -> DarkMode.OFF
+                        else -> DarkMode.AUTO
+                    }
+                updateTheme(theme.value)
+            }
+            true
+        }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun updateTheme(nightMode: Int): Boolean {
+        AppCompatDelegate.setDefaultNightMode(nightMode)
+        requireActivity().recreate()
+        return true
     }
 }

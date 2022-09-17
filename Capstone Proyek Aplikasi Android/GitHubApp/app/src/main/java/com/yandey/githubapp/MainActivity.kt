@@ -6,12 +6,16 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.view.animation.AnticipateInterpolator
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.yandey.githubapp.databinding.ActivityMainBinding
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.preference.PreferenceManager
+import com.yandey.githubapp.utils.DarkMode
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +26,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreenWithAnim(savedInstanceState)
         supportActionBar?.hide()
+
+        val preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        preferences.getString(
+            getString(R.string.pref_key_dark),
+            getString(R.string.pref_dark_auto)
+        )?.apply {
+            val mode = DarkMode.valueOf(this.uppercase(Locale.US))
+            when (mode.value.toString()) {
+                getString(R.string.dark_mode_auto) -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                getString(R.string.dark_mode_on) -> AppCompatDelegate.MODE_NIGHT_YES
+                getString(R.string.dark_mode_off) -> AppCompatDelegate.MODE_NIGHT_NO
+            }
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
