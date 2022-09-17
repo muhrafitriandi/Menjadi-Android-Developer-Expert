@@ -27,21 +27,17 @@ class MainActivity : AppCompatActivity() {
         installSplashScreenWithAnim(savedInstanceState)
         supportActionBar?.hide()
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         val preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         preferences.getString(
             getString(R.string.pref_key_dark),
             getString(R.string.pref_dark_auto)
         )?.apply {
             val mode = DarkMode.valueOf(this.uppercase(Locale.US))
-            when (mode.value.toString()) {
-                getString(R.string.dark_mode_auto) -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                getString(R.string.dark_mode_on) -> AppCompatDelegate.MODE_NIGHT_YES
-                getString(R.string.dark_mode_off) -> AppCompatDelegate.MODE_NIGHT_NO
-            }
+            AppCompatDelegate.setDefaultNightMode(mode.value)
         }
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         navController = findNavController(R.id.navHostFragment)
         setupActionBarWithNavController(navController)
