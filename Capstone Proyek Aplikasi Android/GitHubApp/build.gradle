@@ -32,4 +32,8 @@ ext {
 
     // Preference
     preference_ktx_version = "1.2.0"
+
+    // Retrofit
+    ext.retrofit_version = "2.9.0"
+    ext.logging_interceptor_version = "5.0.0-alpha.6"
 }
