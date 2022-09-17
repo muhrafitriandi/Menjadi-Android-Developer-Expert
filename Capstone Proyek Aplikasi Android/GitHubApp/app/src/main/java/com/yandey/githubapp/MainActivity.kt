@@ -6,16 +6,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.view.animation.AnticipateInterpolator
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.yandey.githubapp.databinding.ActivityMainBinding
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.preference.PreferenceManager
-import com.yandey.githubapp.utils.DarkMode
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,15 +25,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-        preferences.getString(
-            getString(R.string.pref_key_dark),
-            getString(R.string.pref_dark_auto)
-        )?.apply {
-            val mode = DarkMode.valueOf(this.uppercase(Locale.US))
-            AppCompatDelegate.setDefaultNightMode(mode.value)
-        }
 
         navController = findNavController(R.id.navHostFragment)
         setupActionBarWithNavController(navController)
