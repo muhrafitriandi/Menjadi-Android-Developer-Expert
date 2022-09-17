@@ -14,12 +14,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val themePreference = findPreference<ListPreference>(getString(R.string.pref_key_dark))
         themePreference?.setOnPreferenceChangeListener { _, newValue ->
             newValue?.let {
-                val theme =
-                    when ((it as String)) {
-                        getString(R.string.pref_dark_on) -> DarkMode.ON
-                        getString(R.string.pref_dark_off) -> DarkMode.OFF
-                        else -> DarkMode.AUTO
-                    }
+                val theme = when ((it as String)) {
+                    getString(R.string.pref_dark_on) -> DarkMode.ON
+                    getString(R.string.pref_dark_off) -> DarkMode.OFF
+                    else -> DarkMode.AUTO
+                }
                 updateTheme(theme.value)
             }
             true
