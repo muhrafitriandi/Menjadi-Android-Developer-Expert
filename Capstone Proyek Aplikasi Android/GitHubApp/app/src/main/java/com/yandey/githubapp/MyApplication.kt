@@ -3,7 +3,7 @@ package com.yandey.githubapp
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
-import com.yandey.githubapp.utils.DarkMode
+import com.yandey.core.utils.DarkMode
 import java.util.*
 
 class MyApplication : Application() {

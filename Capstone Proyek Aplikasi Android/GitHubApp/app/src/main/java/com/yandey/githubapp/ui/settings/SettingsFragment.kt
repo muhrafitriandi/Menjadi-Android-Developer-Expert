@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import com.yandey.githubapp.R
-import com.yandey.githubapp.utils.DarkMode
+import com.yandey.core.utils.DarkMode
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

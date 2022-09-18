@@ -1,4 +1,4 @@
-package com.yandey.githubapp.utils
+package com.yandey.core.utils
 
 import androidx.appcompat.app.AppCompatDelegate
 
