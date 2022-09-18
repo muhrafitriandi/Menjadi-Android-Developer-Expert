@@ -36,4 +36,7 @@ ext {
     // Retrofit
     ext.retrofit_version = "2.9.0"
     ext.logging_interceptor_version = "5.0.0-alpha.6"
+
+    // Room
+    ext.room_version = "2.4.3"
 }
