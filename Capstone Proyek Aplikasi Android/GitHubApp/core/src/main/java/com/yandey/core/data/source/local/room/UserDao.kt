@@ -14,13 +14,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(user: UserEntity)
+    suspend fun insert(userEntity: UserEntity)
 
     @Query("SELECT * FROM $USER ORDER BY $COL_ID ASC")
     fun getAllFavorite(): Flow<List<UserEntity>>
 
     @Delete
-    suspend fun delete(user: UserEntity)
+    suspend fun delete(userEntity: UserEntity)
 
     @Query("SELECT EXISTS(SELECT * FROM $USER WHERE $COL_LOGIN = :username)")
     fun getFavoriteState(username: String): Flow<UserEntity>
