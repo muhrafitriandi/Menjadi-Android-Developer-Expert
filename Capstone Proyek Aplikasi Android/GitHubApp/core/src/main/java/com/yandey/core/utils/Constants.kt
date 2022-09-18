@@ -16,4 +16,6 @@ object Constants {
     const val COL_NAME = "name"
     const val COL_PUBLIC_REPOS = "public_repos"
     const val COL_IS_FAVORITE = "is_favorite"
+
+    const val USER_DB = "user.db"
 }

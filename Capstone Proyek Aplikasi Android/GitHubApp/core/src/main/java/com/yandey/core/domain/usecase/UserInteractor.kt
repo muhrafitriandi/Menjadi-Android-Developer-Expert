@@ -4,8 +4,9 @@ import com.yandey.core.data.Resource
 import com.yandey.core.domain.model.User
 import com.yandey.core.domain.repository.IUserRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class UserInteractor(
+class UserInteractor @Inject constructor(
     private val userRepository: IUserRepository
 ): UserUseCase {
     override fun getSearchUser(q: String): Flow<Resource<List<User>>> =

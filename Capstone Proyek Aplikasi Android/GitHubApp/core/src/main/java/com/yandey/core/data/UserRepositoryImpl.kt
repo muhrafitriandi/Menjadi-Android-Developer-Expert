@@ -13,8 +13,11 @@ import com.yandey.core.utils.DataMapper.mapListResponseToDomain
 import com.yandey.core.utils.DataMapper.mapResponseToDomain
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class UserRepositoryImpl(
+@Singleton
+class UserRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
 ) : IUserRepository {

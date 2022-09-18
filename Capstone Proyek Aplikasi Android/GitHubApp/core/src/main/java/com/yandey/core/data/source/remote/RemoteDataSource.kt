@@ -7,8 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RemoteDataSource(private val apiService: ApiService) {
+@Singleton
+class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     suspend fun getSearchUser(q: String): Flow<ApiResponse<List<UserResponse>>> = flow {
         try {
             val response = apiService.search(q)
