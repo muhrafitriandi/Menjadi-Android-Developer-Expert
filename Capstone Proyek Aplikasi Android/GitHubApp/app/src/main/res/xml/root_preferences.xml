@@ -12,6 +12,7 @@
 
     <PreferenceCategory app:title="@string/text_display">
         <ListPreference
+            android:defaultValue="@string/pref_dark_auto"
             android:icon="@drawable/ic_theme"
             app:entries="@array/dark_mode"
             app:entryValues="@array/dark_mode_value"

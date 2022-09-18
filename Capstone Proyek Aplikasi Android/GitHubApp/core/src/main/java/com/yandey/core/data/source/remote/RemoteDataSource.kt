@@ -16,7 +16,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             if (user.isNotEmpty()) {
                 emit(ApiResponse.Success(user))
             } else {
-                emit(ApiResponse.Empty)
+                emit(ApiResponse.Error(null))
             }
         } catch (exception: Exception) {
             emit(ApiResponse.Error(exception.toString()))
@@ -29,7 +29,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             if (username.isNotEmpty()) {
                 emit(ApiResponse.Success(response))
             } else {
-                emit(ApiResponse.Empty)
+                emit(ApiResponse.Error(null))
             }
         } catch (exception: Exception) {
             emit(ApiResponse.Error(exception.toString()))
@@ -42,7 +42,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             if (response.isNotEmpty()) {
                 emit(ApiResponse.Success(response))
             } else {
-                emit(ApiResponse.Empty)
+                emit(ApiResponse.Error(null))
             }
         } catch (exception: Exception) {
             emit(ApiResponse.Error(exception.toString()))
@@ -55,7 +55,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             if (response.isNotEmpty()) {
                 emit(ApiResponse.Success(response))
             } else {
-                emit(ApiResponse.Empty)
+                emit(ApiResponse.Error(null))
             }
         } catch (exception: Exception) {
             emit(ApiResponse.Error(exception.toString()))

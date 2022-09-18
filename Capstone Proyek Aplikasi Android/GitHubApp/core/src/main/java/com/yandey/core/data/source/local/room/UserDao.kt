@@ -22,6 +22,6 @@ interface UserDao {
     @Delete
     suspend fun delete(userEntity: UserEntity)
 
-    @Query("SELECT EXISTS(SELECT * FROM $USER WHERE $COL_LOGIN = :username)")
+    @Query("SELECT * FROM $USER WHERE $COL_LOGIN = :username")
     fun getFavoriteState(username: String): Flow<UserEntity>
 }

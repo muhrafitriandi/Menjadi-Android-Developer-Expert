@@ -21,7 +21,7 @@ import com.yandey.core.utils.Constants.USER
 
 @Entity(tableName = USER)
 data class UserEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COL_ID)
     val id: Int? = null,
 
