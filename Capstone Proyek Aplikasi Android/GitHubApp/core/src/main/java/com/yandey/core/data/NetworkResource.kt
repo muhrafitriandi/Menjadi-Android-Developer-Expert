@@ -1,4 +1,4 @@
-package com.yandey.core.data.source
+package com.yandey.core.data
 
 import com.yandey.core.data.source.remote.network.ApiResponse
 import kotlinx.coroutines.flow.*

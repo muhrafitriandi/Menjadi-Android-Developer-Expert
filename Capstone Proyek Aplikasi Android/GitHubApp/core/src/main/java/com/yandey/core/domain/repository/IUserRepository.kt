@@ -1,6 +1,6 @@
 package com.yandey.core.domain.repository
 
-import com.yandey.core.data.source.Resource
+import com.yandey.core.data.Resource
 import com.yandey.core.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
