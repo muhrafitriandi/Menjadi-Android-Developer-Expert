@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.*
 import android.view.View.*
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yandey.core.data.Resource
 import com.yandey.core.domain.model.User
 import com.yandey.core.ui.UserAdapter
+import com.yandey.core.utils.Constants.EXTRA_USER
 import com.yandey.githubapp.R
 import com.yandey.githubapp.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,7 +48,16 @@ class HomeFragment : Fragment(), UserAdapter.ItemClickListener {
     }
 
     override fun onItemClicked(user: User) {
-        Toast.makeText(requireContext(), user.login, Toast.LENGTH_SHORT).show()
+        val bundle = Bundle().apply {
+            requireActivity().intent.putExtra(
+                EXTRA_USER,
+                user
+            )
+        }
+        findNavController().navigate(
+            R.id.action_homeFragment_to_detailFragment,
+            bundle
+        )
     }
 
     private fun setSearchView() {

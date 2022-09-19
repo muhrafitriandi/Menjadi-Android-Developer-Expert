@@ -18,4 +18,6 @@ object Constants {
     const val COL_IS_FAVORITE = "is_favorite"
 
     const val USER_DB = "user.db"
+
+    const val EXTRA_USER = "extra_user"
 }

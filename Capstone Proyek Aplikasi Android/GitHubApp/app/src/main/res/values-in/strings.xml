@@ -15,6 +15,11 @@
     <string name="text_showing_results">Menampilkan %d hasil</string>
     <string name="text_what_are_you_looking_for">Apa yang sedang anda cari?</string>
     <string name="text_user_not_found">Pengguna tidak ditemukan!</string>
+    <string name="text_back">Kembali</string>
+    <string name="text_repository">Repository</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="text_open_on_github">Buka Di GitHub</string>
 
     <string name="image_search_illustration">Gambar Ilustrasi Pencarian</string>
     <string name="image_no_data_illustration">Gambar Ilustrasi Tanpa Data</string>
