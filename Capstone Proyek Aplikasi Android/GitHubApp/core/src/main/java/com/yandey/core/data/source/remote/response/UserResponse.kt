@@ -11,38 +11,38 @@ data class ListUserResponse(
 
 data class UserResponse(
     @field:SerializedName("id")
-    val id: Int? = null,
+    val id: Int?,
 
     @field:SerializedName("avatar_url")
-    val avatar_url: String? = null,
+    val avatar_url: String?,
 
     @field:SerializedName("bio")
-    val bio: String? = null,
+    val bio: String?,
 
     @field:SerializedName("blog")
-    val blog: String? = null,
+    val blog: String?,
 
     @field:SerializedName("company")
-    val company: String? = null,
+    val company: String?,
 
     @field:SerializedName("followers")
-    val followers: Int? = null,
+    val followers: Int?,
 
     @field:SerializedName("following")
-    val following: Int? = null,
+    val following: Int?,
 
     @field:SerializedName("html_url")
-    val html_url: String? = null,
+    val html_url: String?,
 
     @field:SerializedName("location")
-    val location: String? = null,
+    val location: String?,
 
     @field:SerializedName("login")
-    val login: String? = null,
+    val login: String?,
 
     @field:SerializedName("name")
-    val name: String? = null,
+    val name: String?,
 
     @field:SerializedName("public_repos")
-    val public_repos: Int? = null
+    val public_repos: Int?
 )

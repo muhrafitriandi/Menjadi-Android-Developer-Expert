@@ -38,6 +38,9 @@ buildscript {
 
         // Glide
         glide_version = "4.13.1"
+
+        // Lifecycle
+        lifecycle_version = "2.2.0"
     }
 
     dependencies {

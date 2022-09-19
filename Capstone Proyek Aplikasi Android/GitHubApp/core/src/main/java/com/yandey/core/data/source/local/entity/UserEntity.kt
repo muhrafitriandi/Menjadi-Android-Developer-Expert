@@ -23,41 +23,41 @@ import com.yandey.core.utils.Constants.USER
 data class UserEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COL_ID)
-    val id: Int? = null,
+    val id: Int?,
 
     @ColumnInfo(name = COL_AVATAR_URL)
-    val avatar_url: String? = null,
+    val avatar_url: String?,
 
     @ColumnInfo(name = COL_BIO)
-    val bio: String? = null,
+    val bio: String?,
 
     @ColumnInfo(name = COL_BLOG)
-    val blog: String? = null,
+    val blog: String?,
 
     @ColumnInfo(name = COL_COMPANY)
-    val company: String? = null,
+    val company: String?,
 
     @ColumnInfo(name = COL_FOLLOWERS)
-    val followers: Int? = null,
+    val followers: Int?,
 
     @ColumnInfo(name = COL_FOLLOWING)
-    val following: Int? = null,
+    val following: Int?,
 
     @ColumnInfo(name = COL_HTML_URL)
-    val html_url: String? = null,
+    val html_url: String?,
 
     @ColumnInfo(name = COL_LOCATION)
-    val location: String? = null,
+    val location: String?,
 
     @ColumnInfo(name = COL_LOGIN)
-    val login: String? = null,
+    val login: String?,
 
     @ColumnInfo(name = COL_NAME)
-    val name: String? = null,
+    val name: String?,
 
     @ColumnInfo(name = COL_PUBLIC_REPOS)
-    val public_repos: Int? = null,
+    val public_repos: Int?,
 
     @ColumnInfo(name = COL_IS_FAVORITE)
-    val isFavorite: Boolean? = false,
+    val isFavorite: Boolean?,
 )

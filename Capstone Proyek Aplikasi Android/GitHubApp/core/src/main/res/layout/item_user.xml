@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,15 +24,15 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvUsername"
-            android:textStyle="bold"
-            android:layout_marginStart="12dp"
-            android:textColor="?attr/colorPrimary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/ivUser"
             app:layout_constraintStart_toEndOf="@id/ivUser"
             app:layout_constraintTop_toTopOf="@id/ivUser"

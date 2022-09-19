@@ -5,7 +5,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.yandey.core.R
 
-fun ImageView.loadImage(context: Context, url: String) {
+fun ImageView.loadImage(context: Context, url: String?) {
     Glide
         .with(context)
         .load(url)

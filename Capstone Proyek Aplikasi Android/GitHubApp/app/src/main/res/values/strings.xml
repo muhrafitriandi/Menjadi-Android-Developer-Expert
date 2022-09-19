@@ -10,6 +10,14 @@
     <string name="text_change_language">Change Language</string>
     <string name="text_common">Common</string>
     <string name="text_display">Display</string>
+    <string name="text_logo">Logo</string>
+    <string name="text_search">Search username…</string>
+    <string name="text_showing_results">Showing %d results</string>
+    <string name="text_what_are_you_looking_for">What are you looking for?</string>
+    <string name="text_user_not_found">User not found!</string>
+
+    <string name="image_search_illustration">Image Search Illustration</string>
+    <string name="image_no_data_illustration">Image No Data Illustration</string>
 
     <string name="pref_dark_auto" translatable="false">auto</string>
     <string name="pref_dark_on" translatable="false">on</string>
