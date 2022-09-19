@@ -23,6 +23,8 @@
     <string name="text_github_connection">Koneksi GitHub</string>
     <string name="text_share_via">Bagikan melalui</string>
     <string name="text_hello_there">Halo yang disana! Saya menggunakan GitHub. Ikuti saya di https://github.com/%s</string>
+    <string name="text_no_followers">%s\ntidak memiliki pengikut</string>
+    <string name="text_no_following">%s\ntidak mengikuti siapapun</string>
 
     <string name="github_url">https://github.com/%s</string>
 

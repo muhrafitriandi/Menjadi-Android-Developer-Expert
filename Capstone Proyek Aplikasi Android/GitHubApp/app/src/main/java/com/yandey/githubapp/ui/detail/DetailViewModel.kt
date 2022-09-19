@@ -1,8 +1,7 @@
-package com.yandey.githubapp.detail
+package com.yandey.githubapp.ui.detail
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
+import com.yandey.core.data.Resource
 import com.yandey.core.domain.model.User
 import com.yandey.core.domain.usecase.UserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,9 +12,18 @@ import javax.inject.Inject
 class DetailViewModel @Inject constructor(
     private val userUseCase: UserUseCase
 ) : ViewModel() {
-    fun getDetailUser(
-        username: String
-    ) = userUseCase.getDetailUser(username).asLiveData()
+    private val username: MutableLiveData<String> = MutableLiveData()
+
+    fun setDetailUser(username: String) {
+        if (this.username.value == username) return
+        username.also { this.username.value = it }
+    }
+
+    val detailUser: LiveData<Resource<User>> by lazy {
+        Transformations.switchMap(username) { username ->
+            userUseCase.getDetailUser(username).asLiveData()
+        }
+    }
 
     fun getFavoriteStateUser(
         username: String

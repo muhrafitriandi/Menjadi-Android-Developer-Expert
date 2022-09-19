@@ -23,6 +23,8 @@
     <string name="text_github_connection">GitHub Connection</string>
     <string name="text_share_via">Share via</string>
     <string name="text_hello_there">Hello there! I\'m using GitHub. Follow me on https://github.com/%s</string>
+    <string name="text_no_followers">%s\nhas no followers</string>
+    <string name="text_no_following">%s\ndoesn\'t follow anyone</string>
 
     <string name="github_url">https://github.com/%s</string>
 

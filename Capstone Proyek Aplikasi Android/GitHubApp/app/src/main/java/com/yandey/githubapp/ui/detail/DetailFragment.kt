@@ -1,4 +1,4 @@
-package com.yandey.githubapp.detail
+package com.yandey.githubapp.ui.detail
 
 import android.content.Intent
 import android.net.Uri
@@ -8,12 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.google.android.material.tabs.TabLayoutMediator
 import com.yandey.core.data.Resource
 import com.yandey.core.domain.model.User
 import com.yandey.core.utils.Constants.EXTRA_USER
 import com.yandey.core.utils.loadImage
+import com.yandey.core.utils.toShortNumber
 import com.yandey.githubapp.R
 import com.yandey.githubapp.databinding.FragmentDetailBinding
+import com.yandey.githubapp.ui.follows.FollowsPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,9 +40,12 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val username = requireActivity().intent.getStringExtra(EXTRA_USER)
-        observeUserDetail(username.toString())
+        viewModel.setDetailUser(username.toString())
+        observeUserDetail()
         openGithub(getString(R.string.github_url, username.toString()))
         shareGithub(getString(R.string.text_hello_there, username.toString()))
+
+        followsPager()
 
         onBackListener()
     }
@@ -49,8 +55,8 @@ class DetailFragment : Fragment() {
         _binding = null
     }
 
-    private fun observeUserDetail(username: String) {
-        viewModel.getDetailUser(username).observe(viewLifecycleOwner) { response ->
+    private fun observeUserDetail() {
+        viewModel.detailUser.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Error -> {
                     false.showLoading()
@@ -105,14 +111,29 @@ class DetailFragment : Fragment() {
         binding.apply {
             tvUsername.text = user.data?.login ?: "-"
             ivUser.loadImage(requireContext(), user.data?.avatar_url)
-            tvTotalRepository.text = user.data?.public_repos.toString()
-            tvTotalFollowers.text = user.data?.followers.toString()
-            tvTotalFollowing.text = user.data?.following.toString()
+            tvTotalRepository.text = user.data?.public_repos.toString().toShortNumber()
+            tvTotalFollowers.text = user.data?.followers.toString().toShortNumber()
+            tvTotalFollowing.text = user.data?.following.toString().toShortNumber()
             tvName.text = user.data?.name ?: "-"
             tvBio.text = user.data?.bio ?: "-"
             tvCompany.text = user.data?.company ?: "-"
             tvLocation.text = user.data?.location ?: "-"
             tvBlog.text = (if (user.data?.blog == "") "-" else user.data?.blog)
         }
+    }
+
+    private fun followsPager() {
+        val followsPagerAdapter = FollowsPagerAdapter(requireActivity())
+        binding.viewPager.adapter = followsPagerAdapter
+        TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES_FOLLOWS[position])
+        }.attach()
+    }
+
+    companion object {
+        val TAB_TITLES_FOLLOWS = intArrayOf(
+            R.string.text_followers,
+            R.string.text_following
+        )
     }
 }
