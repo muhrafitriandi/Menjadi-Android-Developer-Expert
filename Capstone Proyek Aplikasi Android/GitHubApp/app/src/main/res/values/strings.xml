@@ -17,9 +17,14 @@
     <string name="text_user_not_found">User not found!</string>
     <string name="text_back">Back</string>
     <string name="text_repository">Repository</string>
-    <string name="followers">Followers</string>
-    <string name="following">Following</string>
+    <string name="text_followers">Followers</string>
+    <string name="text_following">Following</string>
     <string name="text_open_on_github">Open On GitHub</string>
+    <string name="text_github_connection">GitHub Connection</string>
+    <string name="text_share_via">Share via</string>
+    <string name="text_hello_there">Hello there! I\'m using GitHub. Follow me on https://github.com/%s</string>
+
+    <string name="github_url">https://github.com/%s</string>
 
     <string name="image_search_illustration">Image Search Illustration</string>
     <string name="image_no_data_illustration">Image No Data Illustration</string>

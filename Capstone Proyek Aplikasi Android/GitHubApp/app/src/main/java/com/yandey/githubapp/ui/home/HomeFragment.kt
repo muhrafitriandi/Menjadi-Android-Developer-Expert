@@ -51,7 +51,7 @@ class HomeFragment : Fragment(), UserAdapter.ItemClickListener {
         val bundle = Bundle().apply {
             requireActivity().intent.putExtra(
                 EXTRA_USER,
-                user
+                user.login
             )
         }
         findNavController().navigate(

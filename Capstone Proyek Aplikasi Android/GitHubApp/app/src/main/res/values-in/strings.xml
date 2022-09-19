@@ -17,9 +17,14 @@
     <string name="text_user_not_found">Pengguna tidak ditemukan!</string>
     <string name="text_back">Kembali</string>
     <string name="text_repository">Repository</string>
-    <string name="followers">Pengikut</string>
-    <string name="following">Mengikuti</string>
+    <string name="text_followers">Pengikut</string>
+    <string name="text_following">Mengikuti</string>
     <string name="text_open_on_github">Buka Di GitHub</string>
+    <string name="text_github_connection">Koneksi GitHub</string>
+    <string name="text_share_via">Bagikan melalui</string>
+    <string name="text_hello_there">Halo yang disana! Saya menggunakan GitHub. Ikuti saya di https://github.com/%s</string>
+
+    <string name="github_url">https://github.com/%s</string>
 
     <string name="image_search_illustration">Gambar Ilustrasi Pencarian</string>
     <string name="image_no_data_illustration">Gambar Ilustrasi Tanpa Data</string>

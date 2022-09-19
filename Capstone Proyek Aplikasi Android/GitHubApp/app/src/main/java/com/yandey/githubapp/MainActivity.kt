@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.animation.AnticipateInterpolator
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -29,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navController = findNavController(R.id.navHostFragment)
+        navController.addOnDestinationChangedListener { _, navDestination, _ ->
+            when (navDestination.id) {
+                R.id.detailFragment -> binding.bottomBar.visibility = GONE
+                else -> binding.bottomBar.visibility = VISIBLE
+            }
+        }
         setupActionBarWithNavController(navController)
     }
 
