@@ -1,17 +1,10 @@
 package com.yandey.core.utils
 
 import android.content.Context
-import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.ImageView
-import androidx.annotation.IdRes
-import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.DialogFragmentNavigator
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.yandey.core.R
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -42,5 +35,12 @@ fun String.toShortNumber(): String {
         }
     } catch (e: Exception) {
         "0"
+    }
+}
+
+fun showSnackBar(view: View?, message: String) {
+    if (view != null) {
+        Snackbar.make(view, message, Snackbar.LENGTH_LONG).setAction(R.string.text_close) {
+        }.show()
     }
 }

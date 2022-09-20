@@ -25,6 +25,9 @@
     <string name="text_hello_there">Hello there! I\'m using GitHub. Follow me on https://github.com/%s</string>
     <string name="text_no_followers">%s\nhas no followers</string>
     <string name="text_no_following">%s\ndoesn\'t follow anyone</string>
+    <string name="text_no_favorite"><string name="you_don_t_have_a_favorite_user">You don\'t have a favorite user</string></string>
+    <string name="text_success_added">Successfully added to favorites!</string>
+    <string name="text_deleted_success">Favorite deleted successfully!</string>
 
     <string name="github_url">https://github.com/%s</string>
 

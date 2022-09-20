@@ -29,5 +29,5 @@ data class User(
 
     val public_repos: Int?,
 
-    val isFavorite: Boolean?,
+    var isFavorite: Boolean?,
 ) : Parcelable

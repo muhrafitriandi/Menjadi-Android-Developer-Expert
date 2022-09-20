@@ -68,21 +68,21 @@ object DataMapper {
             )
         }
 
-    fun mapEntityToDomain(userEntity: UserEntity): User =
+    fun mapEntityToDomain(userEntity: UserEntity?): User =
         User(
-            userEntity.id,
-            userEntity.avatar_url,
-            userEntity.bio,
-            userEntity.blog,
-            userEntity.company,
-            userEntity.followers,
-            userEntity.following,
-            userEntity.html_url,
-            userEntity.location,
-            userEntity.login,
-            userEntity.name,
-            userEntity.public_repos,
-            userEntity.isFavorite
+            userEntity?.id,
+            userEntity?.avatar_url,
+            userEntity?.bio,
+            userEntity?.blog,
+            userEntity?.company,
+            userEntity?.followers,
+            userEntity?.following,
+            userEntity?.html_url,
+            userEntity?.location,
+            userEntity?.login,
+            userEntity?.name,
+            userEntity?.public_repos,
+            userEntity?.isFavorite
         )
 
     fun mapDomainToEntity(user: User) =
