@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class UserInteractor @Inject constructor(
     private val userRepository: IUserRepository
-): UserUseCase {
+) : UserUseCase {
     override fun getSearchUser(q: String): Flow<Resource<List<User>>> =
         userRepository.getSearchUser(q)
 

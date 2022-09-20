@@ -114,7 +114,8 @@ class HomeFragment : Fragment(), UserAdapter.ItemClickListener {
                     userAdapter.submitList(response.data)
                 }
             }
-            binding.tvResultCount.text = getString(R.string.text_showing_results, response.data?.size ?: 0)
+            binding.tvResultCount.text =
+                getString(R.string.text_showing_results, response.data?.size ?: 0)
         }
     }
 

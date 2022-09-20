@@ -32,12 +32,12 @@ class DetailViewModel @Inject constructor(
     fun insertUser(
         user: User
     ) = viewModelScope.launch {
-            userUseCase.insertUser(user)
-        }
+        userUseCase.insertUser(user)
+    }
 
     fun deleteUser(
         user: User
     ) = viewModelScope.launch {
-            userUseCase.deleteUser(user)
-        }
+        userUseCase.deleteUser(user)
+    }
 }
