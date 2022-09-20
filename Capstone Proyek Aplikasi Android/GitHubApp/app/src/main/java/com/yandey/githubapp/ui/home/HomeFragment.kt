@@ -67,7 +67,7 @@ class HomeFragment : Fragment(), UserAdapter.ItemClickListener {
             }
 
             searchView.setOnCloseListener {
-                ivGithub.visibility = VISIBLE
+                findNavController().navigate(R.id.toHomeFragment)
                 false
             }
 

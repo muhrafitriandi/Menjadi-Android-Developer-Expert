@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yandey.core.data.Resource
 import com.yandey.core.domain.model.User
@@ -53,15 +53,7 @@ class FollowersFragment : Fragment(), UserAdapter.ItemClickListener {
     }
 
     override fun onItemClicked(user: User) {
-        val bundle = Bundle().apply {
-            requireActivity().intent.putExtra(
-                EXTRA_USER,
-                user.login
-            )
-        }
-        findNavController().navigate(
-            R.id.action_detailFragment_self, bundle
-        )
+        Toast.makeText(requireActivity(), user.login, Toast.LENGTH_SHORT).show()
     }
 
     private fun initRecyclerView() {

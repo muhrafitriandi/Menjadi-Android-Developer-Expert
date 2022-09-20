@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
+    <action
+        android:id="@+id/toHomeFragment"
+        app:destination="@id/homeFragment" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.yandey.githubapp.ui.home.HomeFragment"
@@ -33,10 +36,5 @@
         android:id="@+id/detailFragment"
         android:name="com.yandey.githubapp.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/action_detailFragment_self"
-            app:destination="@id/detailFragment"
-            app:launchSingleTop="true" />
-    </fragment>
+        tools:layout="@layout/fragment_detail" />
 </navigation>
