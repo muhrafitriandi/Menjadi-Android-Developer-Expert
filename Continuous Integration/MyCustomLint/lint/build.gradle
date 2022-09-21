@@ -18,3 +18,9 @@ dependencies {
     compileOnly "com.android.tools.lint:lint-api:$lintVersion"
     compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
 }
+
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.yandey.lint.MyIssueRegistry")
+    }
+}
